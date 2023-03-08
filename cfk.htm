@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Les 4</title>
+    <script>
+        function CelToFar(c) {
+            var F = c * 9 / 5 + 32;
+            return F;
+        }
+
+        function FarToCel(f) {
+            var C = (f - 32) * 5 / 9;
+            return C;
+        }
+
+        function ConvertIt() {
+
+            var inputValue = document.getElementById("inpDegree").value;
+
+            if (document.getElementById("radCel").checked == true) {
+                document.getElementById("dAnt").innerHTML =
+                    FarToCel(inputValue);
+            } else {
+                document.getElementById("dAnt").innerHTML =
+                    CelToFar(inputValue);
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td colspan="2">invoer<input type="text" id="inpDegree" /></td>
+            </tr>
+            <tr>
+                <td>Celsius<input id="radCel" name="degree" type="radio" /></td>
+                <td>Fahrenheit<input id="radFar" name="degree" type="radio" /></td>
+                <td>Kelvin<input id="radKel" name="degree" type="radio" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="ConvertIt()">Bereken</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">Ant:<div id="dAnt"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
